@@ -1,0 +1,582 @@
+/* Ideology Components Styles */
+
+/* Hero Section */
+.ideology-hero-section {
+  position: relative;
+  min-height: 100vh;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8rem 2rem 4rem;
+  overflow: hidden;
+}
+
+.ideology-hero-container {
+  position: relative;
+  z-index: 10;
+  max-width: 1200px;
+  width: 100%;
+  text-align: center;
+}
+
+.ideology-icon-container {
+  margin-bottom: 3rem;
+}
+
+.ideology-icon-wrapper {
+  width: 8rem;
+  height: 8rem;
+  margin: 0 auto 3rem;
+  position: relative;
+  animation: iconRotate 20s linear infinite;
+}
+
+.ideology-icon-blur {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #d4af37, #c9a961);
+  border-radius: 50%;
+  filter: blur(40px);
+  opacity: 0.5;
+}
+
+.ideology-icon-main {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #d4af37, #c9a961);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  animation: iconPulse 2s ease-in-out infinite;
+}
+
+@keyframes iconRotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes iconPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+.ideology-hero-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-weight: 200;
+  color: #c9a961;
+  margin-bottom: 1.5rem;
+  line-height: 1.1;
+}
+
+.ideology-hero-subtitle {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.2rem, 2.5vw, 2rem);
+  font-weight: 200;
+  color: #f2e6b1;
+  margin-bottom: 1rem;
+  line-height: 1.4;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.ideology-hero-tagline {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1rem, 1.8vw, 1.3rem);
+  font-weight: 200;
+  color: rgba(201, 169, 97, 0.8);
+  font-style: italic;
+  margin-bottom: 3rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Section Styles */
+.ideology-section {
+  position: relative;
+  padding: 4rem 2rem;
+  z-index: 10;
+}
+
+.ideology-section-dark {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.ideology-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.ideology-section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.ideology-section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 200;
+  color: #c9a961;
+  margin-bottom: 1rem;
+}
+
+.ideology-section-subtitle {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1rem, 1.6vw, 1.2rem);
+  font-weight: 200;
+  color: #f2e6b1;
+  max-width: 800px;
+  margin: 1.5rem auto 0;
+}
+
+.ideology-divider {
+  width: 6rem;
+  height: 4px;
+  background: linear-gradient(90deg, #d4af37, #c9a961);
+  margin: 0 auto;
+}
+
+/* Cards Grid */
+.ideology-grid {
+  display: grid;
+  gap: 2rem;
+}
+
+.ideology-grid-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.ideology-grid-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.ideology-grid-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.ideology-card {
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(201, 169, 97, 0.3);
+  border-radius: 20px;
+  padding: 2.5rem 2rem;
+  transition: all 0.3s ease;
+  height: 100%;
+}
+
+.ideology-card:hover {
+  border-color: rgba(201, 169, 97, 0.6);
+  box-shadow: 0 10px 40px rgba(201, 169, 97, 0.2);
+  transform: translateY(-10px) scale(1.02);
+}
+
+.ideology-card-icon {
+  font-size: 3.5rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.ideology-card:hover .ideology-card-icon {
+  transform: scale(1.1);
+}
+
+.ideology-card-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.2rem, 1.8vw, 1.5rem);
+  font-weight: 200;
+  color: #c9a961;
+  margin-bottom: 1rem;
+  text-align: center;
+  line-height: 1.3;
+}
+
+.ideology-card-desc {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(0.9rem, 1.3vw, 1rem);
+  font-weight: 200;
+  color: #f2e6b1;
+  line-height: 1.7;
+  text-align: center;
+}
+
+/* Learning Model */
+.learning-model-visual {
+  max-width: 1000px;
+  margin: 0 auto 3rem;
+}
+
+.learning-model-bar {
+  display: flex;
+  height: 5rem;
+  border-radius: 15px;
+  overflow: hidden;
+  border: 1px solid rgba(201, 169, 97, 0.3);
+}
+
+.learning-model-segment {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 1.2s ease;
+}
+
+.learning-model-human {
+  width: 80%;
+  background: linear-gradient(90deg, #d4af37, #c9a961);
+}
+
+.learning-model-ai {
+  width: 20%;
+  background: linear-gradient(90deg, #06b6d4, #3b82f6);
+}
+
+.learning-model-percentage {
+  font-size: clamp(1.5rem, 2.5vw, 2.5rem);
+  font-weight: 200;
+  margin-right: 0.5rem;
+}
+
+.learning-model-label {
+  font-size: clamp(0.75rem, 1vw, 0.95rem);
+  font-weight: 200;
+}
+
+.learning-model-human .learning-model-percentage,
+.learning-model-human .learning-model-label {
+  color: #1c2e26;
+}
+
+.learning-model-ai .learning-model-percentage,
+.learning-model-ai .learning-model-label {
+  color: white;
+}
+
+.learning-model-card {
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 2.5rem;
+  transition: all 0.3s ease;
+}
+
+.learning-model-card-human {
+  border: 1px solid rgba(212, 175, 55, 0.5);
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(201, 169, 97, 0.1));
+}
+
+.learning-model-card-human:hover {
+  border-color: rgba(212, 175, 55, 0.8);
+}
+
+.learning-model-card-ai {
+  border: 1px solid rgba(6, 182, 212, 0.5);
+  background: linear-gradient(135deg, rgba(6, 182, 212, 0.1), rgba(59, 130, 246, 0.1));
+}
+
+.learning-model-card-ai:hover {
+  border-color: rgba(6, 182, 212, 0.8);
+}
+
+.learning-model-header {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.learning-model-header-icon {
+  font-size: 3.5rem;
+}
+
+.learning-model-header-text {
+  flex: 1;
+}
+
+.learning-model-header-percentage {
+  font-size: clamp(1.5rem, 2.5vw, 2.5rem);
+  font-weight: 200;
+  margin-bottom: 0.3rem;
+}
+
+.learning-model-card-human .learning-model-header-percentage {
+  color: #d4af37;
+}
+
+.learning-model-card-ai .learning-model-header-percentage {
+  color: #06b6d4;
+}
+
+.learning-model-header-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.2rem, 1.8vw, 1.5rem);
+  font-weight: 200;
+}
+
+.learning-model-card-human .learning-model-header-title {
+  color: #c9a961;
+}
+
+.learning-model-card-ai .learning-model-header-title {
+  color: #06b6d4;
+}
+
+.learning-model-items {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.learning-model-item {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  padding: 1rem;
+}
+
+.learning-model-item-icon {
+  font-size: 1.5rem;
+}
+
+.learning-model-item-text {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(0.85rem, 1.2vw, 0.95rem);
+  color: #f2e6b1;
+}
+
+.learning-model-quote {
+  margin-top: 2rem;
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1rem, 1.6vw, 1.2rem);
+  font-weight: 200;
+  color: #f2e6b1;
+  font-style: italic;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Role Slideshow */
+.role-slideshow-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.role-slide {
+  position: relative;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(201, 169, 97, 0.3);
+  border-radius: 20px;
+  overflow: hidden;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.3s ease;
+}
+
+.role-slide:hover {
+  border-color: rgba(201, 169, 97, 0.6);
+}
+
+.role-slide-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.2;
+}
+
+.role-slide-content {
+  position: relative;
+  z-index: 10;
+  padding: 4rem 3rem;
+  text-align: center;
+}
+
+.role-slide-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 200;
+  color: #c9a961;
+  margin-bottom: 2rem;
+  line-height: 1.2;
+}
+
+.role-slide-desc {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.2rem, 2vw, 1.8rem);
+  font-weight: 200;
+  color: #f2e6b1;
+  line-height: 1.6;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .ideology-grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 968px) {
+  .ideology-hero-section {
+    padding: 6rem 1.5rem 3rem;
+  }
+
+  .ideology-section {
+    padding: 3rem 1.5rem;
+  }
+
+  .ideology-grid-4,
+  .ideology-grid-3,
+  .ideology-grid-2 {
+    grid-template-columns: 1fr;
+  }
+
+  .learning-model-items {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .ideology-hero-section {
+    padding: 5rem 1rem 2rem;
+  }
+
+  .ideology-section {
+    padding: 2.5rem 1rem;
+  }
+
+  .ideology-icon-wrapper {
+    width: 6rem;
+    height: 6rem;
+  }
+
+  .ideology-card {
+    padding: 2rem 1.5rem;
+  }
+
+  .learning-model-bar {
+    height: 4rem;
+  }
+
+  .learning-model-card {
+    padding: 2rem 1.5rem;
+  }
+
+  .role-slide {
+    min-height: 400px;
+  }
+
+  .role-slide-content {
+    padding: 3rem 2rem;
+  }
+  
+  .ideology-hero-title {
+    font-size: clamp(2.2rem, 5.5vw, 3.5rem);
+  }
+  
+  .ideology-hero-subtitle {
+    font-size: clamp(1.05rem, 2.2vw, 1.6rem);
+  }
+  
+  .ideology-section-title {
+    font-size: clamp(1.8rem, 3.8vw, 2.8rem);
+  }
+  
+  .ideology-card-title {
+    font-size: clamp(1.1rem, 1.7vw, 1.4rem);
+  }
+  
+  .ideology-card-desc {
+    font-size: clamp(0.85rem, 1.25vw, 0.95rem);
+  }
+}
+
+@media (max-width: 480px) {
+  .ideology-hero-section {
+    padding: 4.5rem 1rem 1.5rem;
+  }
+
+  .ideology-section {
+    padding: 2rem 1rem;
+  }
+
+  .ideology-icon-wrapper {
+    width: 5rem;
+    height: 5rem;
+    margin-bottom: 2rem;
+  }
+
+  .ideology-icon-main {
+    font-size: 2.2rem;
+  }
+
+  .ideology-card {
+    padding: 1.8rem 1.2rem;
+  }
+
+  .learning-model-bar {
+    height: 3.5rem;
+  }
+
+  .learning-model-card {
+    padding: 1.8rem 1.2rem;
+  }
+
+  .learning-model-header {
+    gap: 1rem;
+  }
+
+  .role-slide {
+    min-height: 350px;
+  }
+
+  .role-slide-content {
+    padding: 2.5rem 1.5rem;
+  }
+  
+  .ideology-hero-title {
+    font-size: clamp(2rem, 7vw, 3rem);
+  }
+  
+  .ideology-hero-subtitle {
+    font-size: clamp(1rem, 2.2vw, 1.5rem);
+  }
+  
+  .ideology-hero-tagline {
+    font-size: clamp(0.85rem, 1.6vw, 1.1rem);
+  }
+  
+  .ideology-section-title {
+    font-size: clamp(1.6rem, 3.5vw, 2.5rem);
+  }
+  
+  .ideology-card-title {
+    font-size: clamp(1.05rem, 1.6vw, 1.3rem);
+  }
+  
+  .ideology-card-desc {
+    font-size: clamp(0.8rem, 1.2vw, 0.9rem);
+  }
+  
+  .role-slide-title {
+    font-size: clamp(2rem, 4.5vw, 3rem);
+  }
+  
+  .role-slide-desc {
+    font-size: clamp(1rem, 1.8vw, 1.4rem);
+  }
+}

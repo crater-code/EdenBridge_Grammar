@@ -1,0 +1,90 @@
+╔═══════════════════════════════════════════════════════════╗
+║                                                           ║
+║   EDENBRIDGE GRAMMAR - HOSTINGER DEPLOYMENT              ║
+║   EVERYTHING IS READY - JUST FOLLOW THESE 5 STEPS       ║
+║                                                           ║
+╚═══════════════════════════════════════════════════════════╝
+
+┌───────────────────────────────────────────────────────────┐
+│ STEP 1: IMPORT DATABASE                                  │
+└───────────────────────────────────────────────────────────┘
+
+1. Login to Hostinger cPanel
+2. Open phpMyAdmin
+3. Select database: u993881703_new_react
+4. Click "Import" tab
+5. Upload file: database.sql
+6. Click "Go"
+7. Wait for "Import has been successfully finished"
+
+┌───────────────────────────────────────────────────────────┐
+│ STEP 2: UPLOAD ALL FILES                                 │
+└───────────────────────────────────────────────────────────┘
+
+Upload EVERYTHING from this folder to: public_html/
+
+Make sure to upload:
+✓ All .html, .json, .txt files
+✓ All images (.png, .jpg)
+✓ hero-video.mp4
+✓ .htaccess file (it's hidden!)
+✓ static/ folder (CSS and JS)
+✓ policies/ folder (PDF files)
+✓ api/ folder (PHP backend)
+
+┌───────────────────────────────────────────────────────────┐
+│ STEP 3: TEST DATABASE CONNECTION                         │
+└───────────────────────────────────────────────────────────┘
+
+Visit: https://yourdomain.com/api/test-connection.php
+
+You should see:
+✅ Configuration Check - all green
+✅ Connection SUCCESSFUL
+✅ Table 'applications' exists
+✅ Table 'contact_messages' exists
+
+┌───────────────────────────────────────────────────────────┐
+│ STEP 4: TEST THE FORM                                    │
+└───────────────────────────────────────────────────────────┘
+
+1. Visit: https://yourdomain.com
+2. Go to "Apply Now" page
+3. Fill out the form
+4. Click "Submit Application"
+5. Should see success message
+
+┌───────────────────────────────────────────────────────────┐
+│ STEP 5: CHECK DATABASE                                   │
+└───────────────────────────────────────────────────────────┘
+
+1. Go to phpMyAdmin
+2. Select: u993881703_new_react
+3. Click table: applications
+4. Click "Browse"
+5. Your test data should be there!
+
+╔═══════════════════════════════════════════════════════════╗
+║                                                           ║
+║   ✅ DONE! Your website is now live with working forms   ║
+║                                                           ║
+╚═══════════════════════════════════════════════════════════╝
+
+DATABASE CREDENTIALS (Already Configured):
+------------------------------------------
+Host: localhost
+Database: u993881703_new_react
+Username: u993881703_react_js
+Password: Israr@2012
+
+NEED HELP?
+----------
+Read: UPLOAD_INSTRUCTIONS.txt (detailed guide)
+
+WHAT WAS FIXED:
+---------------
+✅ Forms now actually send data to database
+✅ PHP backend configured with your credentials
+✅ Simplified database (just 2 tables)
+✅ React build updated with working code
+✅ All files ready for one-time upload

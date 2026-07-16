@@ -1,0 +1,560 @@
+/* LED Display & Large Screen Optimization */
+
+/* Prevent content from stretching too wide on ultra-large displays */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+/* Main content wrapper constraint */
+#root {
+  width: 100%;
+  max-width: 2560px;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* Ensure fixed elements respect max-width */
+.navbar,
+.gradient-bg {
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 2560px;
+}
+
+/* Large display media queries */
+@media (min-width: 1920px) {
+  /* Full HD+ displays */
+  body {
+    font-size: 18px;
+  }
+  
+  /* Increase spacing for better readability */
+  .hero-section,
+  .phase-hero {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+  
+  .content-section,
+  .phase-main-section {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+@media (min-width: 2560px) {
+  /* 2K/QHD displays */
+  body {
+    font-size: 20px;
+  }
+  
+  /* Increase spacing further */
+  .hero-section,
+  .phase-hero {
+    padding-left: 6rem;
+    padding-right: 6rem;
+  }
+  
+  .content-section,
+  .phase-main-section {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+  
+  /* Scale up feature cards */
+  .feature-card,
+  .phase-hub-card {
+    transform: scale(1.1);
+    margin: 1rem;
+  }
+}
+
+@media (min-width: 3840px) {
+  /* 4K/UHD displays */
+  body {
+    font-size: 24px;
+  }
+  
+  #root {
+    max-width: 3200px;
+  }
+  
+  .navbar,
+  .gradient-bg {
+    max-width: 3200px;
+  }
+  
+  /* Maximum spacing for ultra-large displays */
+  .hero-section,
+  .phase-hero {
+    padding-left: 8rem;
+    padding-right: 8rem;
+  }
+  
+  .content-section,
+  .phase-main-section {
+    padding-left: 6rem;
+    padding-right: 6rem;
+  }
+  
+  /* Scale up interactive elements */
+  .feature-card,
+  .phase-hub-card {
+    transform: scale(1.2);
+    margin: 1.5rem;
+  }
+  
+  .cta-button,
+  .navbar-cta {
+    transform: scale(1.15);
+  }
+}
+
+/* Aspect ratio optimization for LED displays */
+@media (min-aspect-ratio: 16/9) and (min-width: 1920px) {
+  /* Wide displays - center content better */
+  .hero-split-container,
+  .phase-two-column {
+    max-width: 70vw;
+  }
+}
+
+@media (min-aspect-ratio: 21/9) and (min-width: 2560px) {
+  /* Ultra-wide displays */
+  .hero-split-container,
+  .phase-two-column {
+    max-width: 60vw;
+  }
+  
+  .content-card {
+    max-width: 65vw;
+  }
+}
+
+/* Prevent text from becoming too wide and hard to read */
+.phase-text,
+.section-text,
+.hero-description p,
+.study-text {
+  max-width: 85ch;
+}
+
+/* Ensure images and videos scale properly */
+.hero-background-video,
+.phase-diagram-column img,
+.feature-icon {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Fix for 3D elements on large displays */
+.hero-3d-right {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+@media (min-width: 2560px) {
+  .hero-3d-right {
+    max-width: 1000px;
+  }
+}
+
+@media (min-width: 3840px) {
+  .hero-3d-right {
+    max-width: 1200px;
+  }
+}
+
+/* Grid layouts should have max columns on very large displays */
+@media (min-width: 2560px) {
+  .features-grid {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 400px));
+    justify-content: center;
+  }
+  
+  .phase-hubs-grid {
+    grid-template-columns: repeat(4, minmax(300px, 350px));
+    justify-content: center;
+  }
+}
+
+@media (min-width: 3840px) {
+  .features-grid {
+    grid-template-columns: repeat(auto-fit, minmax(400px, 450px));
+  }
+  
+  .phase-hubs-grid {
+    grid-template-columns: repeat(4, minmax(350px, 400px));
+  }
+}
+
+/* ========================================
+   LANDSCAPE MODE OPTIMIZATIONS
+   ======================================== */
+
+/* Tablet Landscape (768px - 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  /* Reduce vertical padding to fit content */
+  .hero-section,
+  .phase-hero {
+    min-height: 85vh;
+    padding-top: 5rem;
+    padding-bottom: 2rem;
+  }
+  
+  .hero-split-container {
+    gap: 2rem;
+    align-items: center;
+  }
+  
+  .hero-3d-right {
+    height: 400px;
+  }
+  
+  .hero-title,
+  .phase-hero-title {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    margin-bottom: 0.8rem;
+  }
+  
+  .hero-subtitle,
+  .phase-hero-subtitle {
+    font-size: clamp(1rem, 2vw, 1.3rem);
+    margin-bottom: 1rem;
+  }
+  
+  .hero-description {
+    margin-bottom: 1.5rem;
+  }
+  
+  .hero-description p {
+    font-size: clamp(0.9rem, 1.5vw, 1.05rem);
+    line-height: 1.6;
+  }
+  
+  .content-section,
+  .phase-main-section {
+    padding: 2rem 2rem 3rem;
+  }
+  
+  .phase-main-card {
+    padding: 2.5rem 2rem;
+  }
+  
+  .parallel-sections-wrapper {
+    gap: 2rem;
+  }
+  
+  .features-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .feature-card {
+    padding: 2rem 1.5rem;
+  }
+}
+
+/* Large Tablet/Small Desktop Landscape (1024px - 1366px) */
+@media (min-width: 1024px) and (max-width: 1366px) and (orientation: landscape) {
+  .hero-section,
+  .phase-hero {
+    min-height: 90vh;
+    padding-top: 6rem;
+  }
+  
+  .hero-split-container {
+    max-width: 1200px;
+    gap: 3rem;
+  }
+  
+  .hero-3d-right {
+    height: 500px;
+  }
+  
+  .content-card {
+    max-width: 1200px;
+  }
+  
+  .phase-main-card {
+    max-width: 1200px;
+    padding: 3rem 2.5rem;
+  }
+}
+
+/* Desktop Landscape (1366px - 1920px) */
+@media (min-width: 1366px) and (max-width: 1920px) and (orientation: landscape) {
+  .hero-section,
+  .phase-hero {
+    min-height: 95vh;
+  }
+  
+  .hero-split-container {
+    max-width: 1400px;
+  }
+  
+  .content-card {
+    max-width: 1400px;
+  }
+  
+  .phase-main-card {
+    max-width: 1400px;
+  }
+}
+
+/* Large Desktop Landscape (1920px+) */
+@media (min-width: 1920px) and (orientation: landscape) {
+  .hero-section,
+  .phase-hero {
+    min-height: 100vh;
+    padding-top: 8rem;
+  }
+  
+  .hero-split-container {
+    max-width: 1800px;
+    gap: 5rem;
+  }
+  
+  .hero-3d-right {
+    height: 650px;
+  }
+  
+  .content-card {
+    max-width: 1600px;
+  }
+  
+  .phase-main-card {
+    max-width: 1800px;
+  }
+}
+
+/* Ultra-Wide Landscape (2560px+) */
+@media (min-width: 2560px) and (orientation: landscape) {
+  .hero-section,
+  .phase-hero {
+    padding-top: 10rem;
+  }
+  
+  .hero-split-container {
+    max-width: 2200px;
+    gap: 6rem;
+  }
+  
+  .hero-3d-right {
+    height: 750px;
+  }
+  
+  .content-card {
+    max-width: 2000px;
+  }
+  
+  .phase-main-card {
+    max-width: 2200px;
+  }
+}
+
+/* Short Landscape Screens (height < 600px) */
+@media (max-height: 600px) and (orientation: landscape) {
+  .hero-section,
+  .phase-hero {
+    min-height: auto;
+    padding-top: 4rem;
+    padding-bottom: 2rem;
+  }
+  
+  .hero-title,
+  .phase-hero-title {
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    margin-bottom: 0.5rem;
+  }
+  
+  .hero-subtitle,
+  .phase-hero-subtitle {
+    font-size: clamp(0.9rem, 1.8vw, 1.2rem);
+    margin-bottom: 0.8rem;
+  }
+  
+  .hero-description {
+    margin-bottom: 1rem;
+  }
+  
+  .hero-description p {
+    font-size: clamp(0.85rem, 1.4vw, 1rem);
+    line-height: 1.5;
+  }
+  
+  .hero-3d-right {
+    height: 300px;
+    margin-top: 0;
+  }
+  
+  .cta-button {
+    padding: 0.9rem 2.5rem;
+    font-size: 1rem;
+  }
+  
+  .content-section,
+  .phase-main-section {
+    padding: 1.5rem 2rem 2rem;
+  }
+  
+  .phase-main-card {
+    padding: 2rem 1.5rem;
+  }
+  
+  .navbar {
+    padding: 0.4rem 0;
+  }
+  
+  .logo-image {
+    height: 45px;
+  }
+}
+
+/* Very Short Landscape (height < 450px) - Common for phones in landscape */
+@media (max-height: 450px) and (orientation: landscape) {
+  .hero-section,
+  .phase-hero {
+    min-height: auto;
+    padding-top: 3.5rem;
+    padding-bottom: 1.5rem;
+  }
+  
+  .hero-split-container {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .hero-content-left {
+    text-align: center;
+  }
+  
+  .hero-3d-right {
+    display: none; /* Hide 3D on very short screens */
+  }
+  
+  .hero-title,
+  .phase-hero-title {
+    font-size: clamp(1.5rem, 3.5vw, 2.2rem);
+    margin-bottom: 0.4rem;
+  }
+  
+  .hero-subtitle,
+  .phase-hero-subtitle {
+    font-size: clamp(0.85rem, 1.6vw, 1.1rem);
+    margin-bottom: 0.6rem;
+  }
+  
+  .hero-description {
+    margin-bottom: 0.8rem;
+  }
+  
+  .hero-description p {
+    font-size: clamp(0.8rem, 1.3vw, 0.95rem);
+    line-height: 1.4;
+  }
+  
+  .cta-button {
+    padding: 0.8rem 2rem;
+    font-size: 0.95rem;
+  }
+  
+  .navbar {
+    padding: 0.3rem 0;
+  }
+  
+  .logo-image {
+    height: 40px;
+  }
+  
+  .navbar-menu a {
+    font-size: 0.9rem;
+  }
+  
+  .parallel-sections-wrapper {
+    grid-template-columns: 1fr;
+  }
+  
+  .features-grid {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+  }
+  
+  .feature-card {
+    padding: 1.5rem 1rem;
+  }
+}
+
+/* LED Display Landscape Optimization */
+@media (min-width: 1920px) and (min-height: 1080px) and (orientation: landscape) {
+  /* Optimize for large LED displays in landscape */
+  body {
+    font-size: 19px;
+  }
+  
+  .hero-section,
+  .phase-hero {
+    padding-left: 5rem;
+    padding-right: 5rem;
+  }
+  
+  .content-section,
+  .phase-main-section {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+}
+
+@media (min-width: 2560px) and (min-height: 1440px) and (orientation: landscape) {
+  body {
+    font-size: 21px;
+  }
+  
+  .hero-section,
+  .phase-hero {
+    padding-left: 7rem;
+    padding-right: 7rem;
+  }
+  
+  .content-section,
+  .phase-main-section {
+    padding-left: 5rem;
+    padding-right: 5rem;
+  }
+}
+
+/* Ultra-wide aspect ratios (21:9, 32:9) */
+@media (min-aspect-ratio: 21/9) and (orientation: landscape) {
+  .hero-split-container,
+  .phase-two-column {
+    max-width: 65vw;
+  }
+  
+  .content-card {
+    max-width: 70vw;
+  }
+  
+  .features-grid,
+  .phase-hubs-grid {
+    max-width: 75vw;
+    margin: 0 auto;
+  }
+}
+
+@media (min-aspect-ratio: 32/9) and (orientation: landscape) {
+  .hero-split-container,
+  .phase-two-column {
+    max-width: 55vw;
+  }
+  
+  .content-card {
+    max-width: 60vw;
+  }
+  
+  .features-grid,
+  .phase-hubs-grid {
+    max-width: 65vw;
+  }
+}

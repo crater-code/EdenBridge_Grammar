@@ -1,0 +1,22 @@
+# Enable CORS for API requests
+<IfModule mod_headers.c>
+    Header set Access-Control-Allow-Origin "*"
+    Header set Access-Control-Allow-Methods "POST, GET, OPTIONS"
+    Header set Access-Control-Allow-Headers "Content-Type"
+</IfModule>
+
+# Enable error logging
+php_flag display_errors Off
+php_flag log_errors On
+php_value error_log error.log
+
+# Security settings
+<Files "config.php">
+    Order allow,deny
+    Deny from all
+</Files>
+
+<Files "error.log">
+    Order allow,deny
+    Deny from all
+</Files>

@@ -1,0 +1,15 @@
+/* Fix for Our Story section - center align text */
+#our-story {
+  text-align: center !important;
+}
+
+#our-story * {
+  text-align: center !important;
+}
+
+/* Ensure all paragraphs in Our Story section are centered */
+#our-story p {
+  text-align: center !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}

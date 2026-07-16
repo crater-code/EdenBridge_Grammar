@@ -1,0 +1,547 @@
+.apply-page {
+  position: relative;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.apply-hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8rem 2rem 4rem;
+  z-index: 10;
+}
+
+.apply-content {
+  max-width: 900px;
+  width: 100%;
+  text-align: center;
+}
+
+.apply-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 200;
+  background: linear-gradient(135deg, #cba641, #f2e6b1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.apply-subtitle {
+  font-size: clamp(1rem, 1.8vw, 1.15rem);
+  line-height: 1.8;
+  color: #f2e6b1;
+  margin-bottom: 3rem;
+  font-weight: 200;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.apply-form {
+  background: rgba(26, 47, 35, 0.6);
+  border: 1px solid rgba(203, 166, 65, 0.3);
+  border-radius: 20px;
+  padding: 3rem;
+  backdrop-filter: blur(10px);
+  margin-bottom: 3rem;
+  text-align: left;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group.full-width {
+  grid-column: 1 / -1;
+  margin-bottom: 2rem;
+}
+
+.form-group label {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  font-weight: 200;
+  color: #cba641;
+  margin-bottom: 0.5rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  font-weight: 200;
+  padding: 0.9rem 1.2rem;
+  background: rgba(9, 32, 18, 0.5);
+  border: 1px solid rgba(203, 166, 65, 0.3);
+  border-radius: 8px;
+  color: #f2e6b1;
+  transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #cba641;
+  box-shadow: 0 0 0 3px rgba(203, 166, 65, 0.1);
+  background: rgba(9, 32, 18, 0.7);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: rgba(242, 230, 177, 0.4);
+}
+
+.form-group select {
+  cursor: pointer;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.submit-btn {
+  padding: 1.2rem 3rem;
+  font-size: 1.1rem;
+  font-weight: 200;
+  font-family: 'Playfair Display', serif;
+  background: linear-gradient(135deg, #cba641, #f2e6b1);
+  color: #092012;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 25px rgba(203, 166, 65, 0.4);
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.submit-btn:hover:not(:disabled) {
+  background: linear-gradient(135deg, #f2e6b1, #cba641);
+  box-shadow: 0 10px 35px rgba(203, 166, 65, 0.6);
+  transform: translateY(-2px);
+}
+
+.submit-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(9, 32, 18, 0.3);
+  border-top: 2px solid #092012;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.form-note {
+  text-align: center;
+  font-size: 0.85rem;
+  color: rgba(242, 230, 177, 0.6);
+  margin-top: 1.5rem;
+  font-weight: 200;
+}
+
+.success-message {
+  background: rgba(26, 47, 35, 0.6);
+  border: 2px solid rgba(203, 166, 65, 0.5);
+  border-radius: 20px;
+  padding: 4rem 3rem;
+  backdrop-filter: blur(10px);
+  margin-bottom: 3rem;
+}
+
+.success-icon {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, #cba641, #f2e6b1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  color: #092012;
+  margin: 0 auto 2rem;
+  box-shadow: 0 10px 30px rgba(203, 166, 65, 0.4);
+}
+
+.success-message h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  font-weight: 200;
+  color: #cba641;
+  margin-bottom: 1rem;
+}
+
+.success-message p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #f2e6b1;
+  margin-bottom: 2rem;
+  font-weight: 200;
+}
+
+.success-actions {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.whatsapp-btn,
+.another-btn {
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  font-weight: 200;
+  font-family: 'Playfair Display', serif;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+  border: 2px solid transparent;
+}
+
+.whatsapp-btn {
+  background: linear-gradient(135deg, #cba641, #f2e6b1);
+  color: #092012;
+  box-shadow: 0 8px 25px rgba(203, 166, 65, 0.4);
+}
+
+.whatsapp-btn:hover {
+  background: linear-gradient(135deg, #f2e6b1, #cba641);
+  box-shadow: 0 10px 35px rgba(203, 166, 65, 0.6);
+  transform: translateY(-2px);
+}
+
+.another-btn {
+  background: transparent;
+  color: #cba641;
+  border: 2px solid #cba641;
+}
+
+.another-btn:hover {
+  background: rgba(203, 166, 65, 0.15);
+  box-shadow: 0 8px 25px rgba(203, 166, 65, 0.3);
+  transform: translateY(-2px);
+}
+
+.contact-info {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.info-card {
+  background: rgba(26, 47, 35, 0.4);
+  border: 1px solid rgba(203, 166, 65, 0.2);
+  border-radius: 12px;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  transition: all 0.3s ease;
+}
+
+.info-card:hover {
+  border-color: rgba(203, 166, 65, 0.5);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(203, 166, 65, 0.2);
+}
+
+.info-icon {
+  font-size: 2rem;
+  filter: grayscale(0.3);
+}
+
+.info-card h4 {
+  font-family: 'Playfair Display', serif;
+  font-size: 0.9rem;
+  font-weight: 200;
+  color: #cba641;
+  margin-bottom: 0.3rem;
+}
+
+.info-card a {
+  color: #f2e6b1;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 200;
+  transition: color 0.3s ease;
+}
+
+.info-card a:hover {
+  color: #cba641;
+}
+
+@media (max-width: 968px) {
+  .apply-hero {
+    padding: 7rem 1.5rem 3rem;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .apply-form {
+    padding: 2.5rem 2rem;
+  }
+
+  .contact-info {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .apply-hero {
+    padding: 6rem 1.5rem 3rem;
+  }
+
+  .apply-form {
+    padding: 2rem 1.5rem;
+  }
+
+  .submit-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .success-message {
+    padding: 3rem 2rem;
+  }
+
+  .success-actions {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .whatsapp-btn,
+  .another-btn {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .apply-title {
+    font-size: clamp(2rem, 5.5vw, 3.2rem);
+  }
+  
+  .apply-subtitle {
+    font-size: 0.95rem;
+  }
+  
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .apply-form {
+    padding: 1.5rem 1rem;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    font-size: 0.85rem;
+    padding: 0.8rem 1rem;
+  }
+
+  .success-message {
+    padding: 2.5rem 1.5rem;
+  }
+
+  .success-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 2.5rem;
+  }
+
+  .success-message h2 {
+    font-size: 1.35rem;
+  }
+
+  .success-message p {
+    font-size: 0.9rem;
+  }
+  
+  .apply-title {
+    font-size: clamp(1.8rem, 6vw, 2.8rem);
+  }
+  
+  .apply-subtitle {
+    font-size: 0.9rem;
+  }
+  
+  .submit-btn {
+    font-size: 0.95rem;
+  }
+}
+
+/* Landscape mode optimizations */
+@media (max-width: 968px) and (orientation: landscape) {
+  .apply-hero {
+    min-height: 85vh;
+    padding: 5rem 2rem 2rem;
+  }
+
+  .apply-title {
+    font-size: clamp(2rem, 4.5vw, 3.2rem);
+    margin-bottom: 0.8rem;
+  }
+
+  .apply-subtitle {
+    font-size: 1rem;
+  }
+
+  .apply-form {
+    padding: 2rem 2rem;
+  }
+
+  .form-row {
+    gap: 1.5rem;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    font-size: 0.92rem;
+  }
+
+  .contact-info {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-height: 500px) and (orientation: landscape) {
+  .apply-hero {
+    min-height: auto;
+    padding: 3.5rem 2rem 1.5rem;
+  }
+
+  .apply-title {
+    font-size: clamp(1.6rem, 4vw, 2.5rem);
+    margin-bottom: 0.6rem;
+  }
+
+  .apply-subtitle {
+    font-size: 0.88rem;
+  }
+
+  .apply-form {
+    padding: 1.5rem 2rem;
+  }
+
+  .form-group {
+    margin-bottom: 1rem;
+  }
+
+  .form-group label {
+    font-size: 0.88rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    font-size: 0.85rem;
+    padding: 0.7rem 1rem;
+  }
+
+  .form-group textarea {
+    min-height: 80px;
+  }
+
+  .submit-btn {
+    padding: 0.85rem 2.5rem;
+    font-size: 0.95rem;
+  }
+
+  .success-message {
+    padding: 2rem 2rem;
+  }
+
+  .success-icon {
+    width: 55px;
+    height: 55px;
+    font-size: 2.2rem;
+  }
+
+  .success-message h2 {
+    font-size: 1.3rem;
+  }
+
+  .success-message p {
+    font-size: 0.88rem;
+  }
+
+  .whatsapp-btn,
+  .another-btn {
+    padding: 0.8rem 2rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  .apply-hero {
+    min-height: 90vh;
+    padding: 6rem 2.5rem 2rem;
+  }
+
+  .apply-form {
+    padding: 2.5rem 2.5rem;
+  }
+}
+
+@media (min-width: 1920px) and (orientation: landscape) {
+  .apply-hero {
+    padding: 8rem 5rem 3rem;
+  }
+
+  .apply-form {
+    padding: 3.5rem 4rem;
+  }
+}
+
+@media (min-width: 2560px) and (orientation: landscape) {
+  .apply-hero {
+    padding: 10rem 7rem 4rem;
+  }
+
+  .apply-form {
+    padding: 4rem 5rem;
+  }
+}

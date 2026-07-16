@@ -1,0 +1,28 @@
+/* Foundation Phase Styles - Minimal utility classes */
+
+.perspective-1000 { perspective: 1000px; }
+
+/* Ensure proper card flipping */
+.relative { position: relative; }
+.absolute { position: absolute; }
+.inset-0 { top: 0; right: 0; bottom: 0; left: 0; }
+
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+  .perspective-1000 {
+    height: auto !important;
+    min-height: 18rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .perspective-1000 {
+    min-height: 16rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .perspective-1000 {
+    min-height: 14rem;
+  }
+}

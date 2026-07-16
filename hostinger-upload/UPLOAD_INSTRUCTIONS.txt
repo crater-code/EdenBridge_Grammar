@@ -1,0 +1,179 @@
+═══════════════════════════════════════════════════════════════
+  HOSTINGER UPLOAD INSTRUCTIONS - COMPLETE GUIDE
+═══════════════════════════════════════════════════════════════
+
+✅ EVERYTHING IS READY! Just follow these steps:
+
+═══════════════════════════════════════════════════════════════
+STEP 1: SETUP DATABASE
+═══════════════════════════════════════════════════════════════
+
+1. Login to Hostinger cPanel
+2. Go to "MySQL Databases" or "phpMyAdmin"
+3. Select database: u993881703_new_react
+4. Click "Import" tab
+5. Choose file: database.sql (from this folder)
+6. Click "Go" button
+7. Wait for success message
+
+✅ This creates 2 tables:
+   - applications (for Apply Now form)
+   - contact_messages (for Contact form)
+
+═══════════════════════════════════════════════════════════════
+STEP 2: UPLOAD ALL FILES
+═══════════════════════════════════════════════════════════════
+
+Upload EVERYTHING from this hostinger-upload folder to:
+public_html/
+
+Files to upload:
+✅ index.html
+✅ asset-manifest.json
+✅ robots.txt
+✅ sitemap.xml
+✅ .htaccess (IMPORTANT!)
+✅ logo.png
+✅ hero-video.mp4
+✅ aj.png, dr.jpg, mujeeb.jpg, naveed.jpg, tirzah.jpg
+✅ static/ folder (contains CSS and JS)
+✅ policies/ folder (contains PDF files)
+✅ api/ folder (contains PHP files)
+
+FINAL STRUCTURE:
+public_html/
+  ├── index.html
+  ├── .htaccess
+  ├── asset-manifest.json
+  ├── robots.txt
+  ├── sitemap.xml
+  ├── logo.png
+  ├── hero-video.mp4
+  ├── *.jpg (team photos)
+  ├── static/
+  │   ├── css/
+  │   │   └── main.b97b9353.css
+  │   └── js/
+  │       └── main.702a173f.js
+  ├── policies/
+  │   └── *.pdf (8 policy files)
+  └── api/
+      ├── .htaccess
+      ├── config.php
+      ├── submit-application.php
+      ├── submit-contact.php
+      └── test-connection.php
+
+═══════════════════════════════════════════════════════════════
+STEP 3: TEST DATABASE CONNECTION
+═══════════════════════════════════════════════════════════════
+
+1. Open browser
+2. Visit: https://yourdomain.com/api/test-connection.php
+3. You should see:
+   ✅ Configuration Check - all green
+   ✅ Connection SUCCESSFUL
+   ✅ Table 'applications' exists
+   ✅ Table 'contact_messages' exists
+
+If you see ❌ red errors:
+- Check database credentials in api/config.php
+- Make sure database exists
+- Make sure tables were created
+
+═══════════════════════════════════════════════════════════════
+STEP 4: TEST THE WEBSITE
+═══════════════════════════════════════════════════════════════
+
+1. Visit: https://yourdomain.com
+2. Website should load normally
+3. Navigate to: Apply Now page
+4. Fill out the form
+5. Click "Submit Application"
+6. You should see success message
+
+═══════════════════════════════════════════════════════════════
+STEP 5: VERIFY DATA IN DATABASE
+═══════════════════════════════════════════════════════════════
+
+1. Go back to phpMyAdmin
+2. Select database: u993881703_new_react
+3. Click on table: applications
+4. Click "Browse" tab
+5. You should see your test submission!
+
+═══════════════════════════════════════════════════════════════
+DATABASE CREDENTIALS (Already Configured)
+═══════════════════════════════════════════════════════════════
+
+Host: localhost
+Database: u993881703_new_react
+Username: u993881703_react_js
+Password: Israr@2012
+
+These are already set in api/config.php - NO NEED TO CHANGE!
+
+═══════════════════════════════════════════════════════════════
+TROUBLESHOOTING
+═══════════════════════════════════════════════════════════════
+
+Problem: Form submits but no data in database
+Solution:
+  1. Check browser console (F12) for errors
+  2. Visit test-connection.php
+  3. Check api/error.log file on server
+  4. Verify api folder is at public_html/api/
+
+Problem: 404 error on form submit
+Solution:
+  1. Make sure api folder uploaded correctly
+  2. Check .htaccess file in api folder
+  3. Verify file permissions (755 for folders, 644 for files)
+
+Problem: Database connection failed
+Solution:
+  1. Verify database exists in cPanel
+  2. Check database credentials in config.php
+  3. Make sure database user has permissions
+  4. Try test-connection.php
+
+Problem: Tables not found
+Solution:
+  1. Import database.sql again
+  2. Make sure you selected correct database
+  3. Check if import completed successfully
+
+═══════════════════════════════════════════════════════════════
+WHAT'S FIXED
+═══════════════════════════════════════════════════════════════
+
+✅ Forms now ACTUALLY send data to PHP backend
+✅ Database connection configured with your credentials
+✅ Simplified SQL file (just 2 tables needed)
+✅ All PHP files updated and tested
+✅ React build updated with working form code
+✅ .htaccess files for React Router and API
+✅ Test connection script included
+
+═══════════════════════════════════════════════════════════════
+IMPORTANT NOTES
+═══════════════════════════════════════════════════════════════
+
+1. Upload ALL files from this folder
+2. Don't skip the .htaccess files (they're hidden!)
+3. Import database.sql FIRST before testing
+4. Test with test-connection.php BEFORE testing forms
+5. Check browser console if forms don't work
+6. api folder must be at ROOT of public_html
+
+═══════════════════════════════════════════════════════════════
+NEED HELP?
+═══════════════════════════════════════════════════════════════
+
+1. Visit: yourdomain.com/api/test-connection.php
+2. Check browser console (F12 key)
+3. Check api/error.log on server
+4. Verify file structure matches above
+5. Make sure database.sql was imported successfully
+
+═══════════════════════════════════════════════════════════════
