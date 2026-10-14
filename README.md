@@ -13,6 +13,7 @@ Official web platform for **Edenbridge Grammar School**, an institution in Islam
 
 ## 📑 Table of Contents
 
+- [Visual Showcase & Screenshots](#-visual-showcase--screenshots)
 - [Overview & Architecture](#overview--architecture)
 - [Key Features](#key-features)
 - [Technology Stack](#technology-stack)
@@ -23,6 +24,29 @@ Official web platform for **Edenbridge Grammar School**, an institution in Islam
 - [Deployment Guidelines](#deployment-guidelines)
 - [Audit Findings & Recommendations](#audit-findings--recommendations)
 - [Contact & Support](#contact--support)
+
+---
+
+## 📸 Visual Showcase & Screenshots
+
+<div align="center">
+
+### Homepage & Interactive 3D Hero Experience
+![Edenbridge Grammar School Hero & Core Values](./screenshots/hero.png)
+
+</div>
+
+| Exel Learning Framework & AI Model | Curriculum Phase Overview |
+| :---: | :---: |
+| ![Exel Learning Framework](./screenshots/learning-model.png) | ![Curriculum Phase Overview](./screenshots/phase-overview.png) |
+| **AI Cognitive Models & Architecture**<br/>*Interactive neuro-pedagogical framework visualization* | **Exel Integrated Curriculum Phases**<br/>*Foundation, Formation, Orientation & Direction stages* |
+
+<div align="center">
+
+### Footer, Contact Hub & Campus Location
+![Footer & Location Map](./screenshots/footer.png)
+
+</div>
 
 ---
 
