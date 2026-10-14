@@ -21,8 +21,7 @@ Official web platform for **Edenbridge Grammar School**, an institution in Islam
 - [Routing & Page Map](#routing--page-map)
 - [Backend & Database Setup](#backend--database-setup)
 - [Local Development Setup](#local-development-setup)
-- [Deployment Guidelines](#deployment-guidelines)
-- [Audit Findings & Recommendations](#audit-findings--recommendations)
+- [Contributors](#-contributors)
 - [Contact & Support](#contact--support)
 
 ---
@@ -249,68 +248,10 @@ define('SITE_URL', 'https://edenbridgegrammar.edu');
 
 ---
 
-## 🚀 Deployment Guidelines
+## 👥 Contributors
 
-### Option A: Vercel (Frontend Only)
-The repository contains [`vercel.json`](file:///C:/Users/abdul/.gemini/antigravity-ide/scratch/EdenBridge_Grammar/vercel.json) configured for single-page application routing:
-```json
-{
-  "rewrites": [
-    { "source": "/(.*)", "destination": "/index.html" }
-  ]
-}
-```
-*Note: Because Vercel does not natively run PHP scripts out-of-the-box, the `/api/` endpoints must either be hosted on a PHP-capable host (such as Hostinger or cPanel) with CORS enabled, or rewritten to Vercel Serverless Functions.*
-
-### Option B: Hostinger / cPanel / Apache LAMP (Full Stack)
-1. Run `npm run build` locally.
-2. Upload the contents of the generated `build/` folder to your server's `public_html/`.
-3. Copy the `api/` directory into `public_html/api/`.
-4. Ensure `.htaccess` is present in `public_html/` with the standard SPA rewrite rules:
-   ```apache
-   <IfModule mod_rewrite.c>
-     RewriteEngine On
-     RewriteBase /
-     RewriteRule ^index\.html$ - [L]
-     RewriteCond %{REQUEST_FILENAME} !-f
-     RewriteCond %{REQUEST_FILENAME} !-d
-     RewriteRule . /index.html [L]
-   </IfModule>
-   ```
-5. Import `database-setup.sql` into phpMyAdmin and update `api/config.php`.
-
----
-
-## 🔍 Audit Findings & Recommendations
-
-A comprehensive code and architectural audit of the repository reveals the following findings:
-
-### 1. Build & Dependency Setup
-- **CRACO Version Compatibility**: The project uses `@craco/craco: ^5.9.0` with `react-scripts: ^5.0.1`. In newer Node/NPM environments, CRACO 5 produces a warning regarding missing `eslint-loader`.
-  - *Recommendation*: Upgrade to `@craco/craco: ^7.1.0` or consider migrating to **Vite** for sub-second build times and streamlined Tailwind configuration.
-
-### 2. Asset Optimization
-- **Large Image Assets in Source**:
-  - `src/components/Orientation.png` is **6.48 MB**.
-  - `src/components/direction.png` is **903 KB**.
-  - *Recommendation*: Convert these high-resolution images to modern `.webp` format and compress them (reducing total size from 7.4 MB to under 400 KB), drastically improving page load speed.
-- **Hero Video**:
-  - `public/hero-video.mp4` is **3.4 MB**. While streaming smoothly, adding a static video poster image prevents a blank flash on slower mobile connections.
-
-### 3. Policy PDF Management
-- The 8 PDF files in `public/policies/` are properly linked in `src/pages/Policies.js`.
-- Note: Several filenames contain trailing spaces (e.g., `Data Protection Policy .pdf`, `Code of Conduct .pdf`).
-  - *Recommendation*: Standardize file naming conventions to kebab-case (e.g., `data-protection-policy.pdf`) and update links accordingly to prevent URL-encoding anomalies across web servers.
-
-### 4. API & Form Integration
-- `src/pages/ApplyNow.js` makes a `fetch('/api/submit-application.php')` call.
-- When deployed on static hosting without a PHP runtime, form submissions fail gracefully with a user alert.
-  - *Recommendation*: Set up an environment variable `REACT_APP_API_BASE_URL` so that API calls can target a remote backend domain when the frontend is hosted independently on Vercel.
-
-### 5. Security & Administration
-- In `database-setup.sql`, a default administrator account is seeded with a placeholder password (`ChangeMe123!`).
-  - *Action*: Change this initial password immediately upon deploying to a live MySQL instance.
-- The PHP endpoints correctly utilize prepared statements with parameter binding, defending against SQL injection vulnerabilities.
+- **Lead Developer**: [Muhammad Abdullah Wasim](https://www.linkedin.com/in/muhammad-abdullah-92b50a304/)
+- **Co-Developers**: [Muhammad Siraj Munir](https://www.linkedin.com/in/siraj-munir-10furc/) and [Arooba Jahangir](https://www.linkedin.com/in/aroobajahangir/)
 
 ---
 
